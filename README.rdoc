@@ -1,7 +1,12 @@
 = numeral
 
-Description goes here.
+Numeral parses natural language numbers like 'three' and '1/3' to ruby Rational numbers. It is ideally suited to applications where user input is integer or fraction oriented. For example:
 
+include Numeral
+parse_num('1/3') + parse_num('two') + parse_num('2/3') == 3
+
+Numeral will also gracefully handle floating point numbers such as '.5' and '3.14' as well as regular integer values.
+ 
 == Note on Patches/Pull Requests
  
 * Fork the project.
