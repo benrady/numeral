@@ -1,13 +1,13 @@
 module Numeral
-  def parse(text)
-    return parse_natural(text) if text[/[a-z|A-Z]/]
+  def parse_num(text)
+    return parse_natural_num(text) if text[/[a-z|A-Z]/]
     numerator, denominator = text.split('/')
     return numerator.to_f if numerator.include?('.')
     denominator ||= 1
     Rational(numerator.to_i, denominator.to_i)
   end
 
-  def parse_natural(text)
+  def parse_natural_num(text)
     [
       'zero', 
       'one', 
