@@ -8,6 +8,14 @@ describe Numeral do
     parse_num("foobar").should be_nil
   end
 
+  it "returns nil for a nil input" do
+    parse_num(nil).should == nil
+  end
+
+  it "returns nil for an empty input" do
+    parse_num('').should == nil
+  end
+
   describe "parses" do
 
     it "digits" do

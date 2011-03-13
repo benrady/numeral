@@ -1,5 +1,7 @@
 module Numeral
   def parse_num(text)
+    return nil unless text
+    return nil if text.length == 0
     return parse_natural_num(text) if text[/[a-z|A-Z]/]
     numerator, denominator = text.split('/')
     return numerator.to_f if numerator.include?('.')
